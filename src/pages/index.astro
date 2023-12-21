@@ -1,0 +1,113 @@
+---
+
+import CoverFull from "@components/sections/CoverFull.astro";
+
+import SectionNavigator from "@components/widgets/SectionNavigator.astro";
+import { YouTube } from '@astro-community/astro-embed-youtube';
+
+import Layout from "@layouts/Layout.astro";
+import IcoList from "@components/items/IcoList.astro";
+
+const datapage = {
+    titlePage:"Ferias y Exposiciones",
+    description:"Administración de Ferias y/o Exposiciones Comerciales"
+}
+
+const seo = {
+	title:datapage.titlePage,
+	description: datapage.description,
+};
+---
+
+<Layout  {seo}>
+	<CoverFull idSection="inicio" >
+		
+		<h1 class="title-page-home">Servicio especializado para maquinas de corte y Dobladoras</sup> </h1>
+            <p class="text-18px lg:text-28px pt-4 pr-10% leading-8 ">
+				Servicio preventivo y correctivo para máquinas Dobladoras y cortadoras de tubo
+		    </p>
+			
+	</CoverFull>
+
+
+	<section id="acerca" class="seccion-base pale " >
+		<div class="container grid ic">
+			<div class="flex flex-col gap-4">
+			<h2 class="brand">ACERCA DE NOSOTROS</h2>
+			<p>Profesionales capacitados en México, Italia y Brasil con más de 15 años de experiencia.</p>
+			
+			</div>
+			
+		</div>
+	</section>
+	<section id="acerca" class="py-8 text-center bg-mi-sec " >
+
+			<p class="text-2vw font-700">VENTA DE REFACCIONES Y HERRAMENTALES / CAPACITACIÓN Y CURSOS DE PROGRAMACIÓN.</p>
+			
+
+	</section>
+
+<section class="seccion-base contrast">
+	<div class="container">
+		<div class="grid lg:grid-cols-3 gap-10 text-center">
+			<div>
+				<h3>VIDEO</h3>
+				<p><YouTube id="SJZlzaJcwY0" /></p>
+			</div>
+			<div>
+				<h3>VIDEO</h3>
+				<p><YouTube id="Bwam55tmzUo" /></p>
+			</div>
+			<div>
+				<h3>VIDEO</h3>
+				<p><YouTube id="gCgrSjiO7t0" /></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+	<section id="servicios" class="seccion-base relative">
+		<div class="w-5vw lg:w-49vw absolute -z-0 h-full bg-mi-brand top-0 left-0 "></div>
+		<div class="container">
+
+			
+
+				<div class="row grid lg:grid-cols-2 gap-10 icc">
+					<div>
+					  <img src="/assets/img/tecni-01.webp" alt="servicios y venta de refacciónes para máquinas">
+					</div>
+					<div class="flex flex-col gap-4">
+						<h2>NUESTROS SERVICIOS</h2>
+						<p>
+							Mantenimiento preventivo, servicios y venta de refacciónes para máquinas:</p>
+
+							<ul>
+								<IcoList dataList="DOBLADORAS DE TUBO" />
+								<IcoList dataList="DOBLADORAS DE ALAMBRE" />
+								<IcoList dataList="DEFORMADORAS DE EXTREMOS" />
+								<IcoList dataList="CORTADORAS" />
+													
+							</ul>
+					
+					</div>
+				</div>
+
+
+		</div>
+	</section>
+
+	
+</Layout>
+
+<SectionNavigator>
+    <a href="#inicio"><span>Inicio</span> </a>
+    <a href="#acerca"><span>Acerca</span></a>
+    <a href="#servicios"><span>Servicios</span></a>
+    <a href="#contacto"><span>Contacto</span></a>
+</SectionNavigator>
+
+
+<style>
+
+
+</style>

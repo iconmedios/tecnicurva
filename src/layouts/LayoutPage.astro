@@ -1,0 +1,21 @@
+---
+import Layout from "./Layout.astro";
+import type { Props as SEOProps } from '@components/SEO.astro';
+export interface Props {
+	seo?: SEOProps;
+	titlepage: string;
+	subtitle?: string;
+}
+const { seo, titlepage, subtitle } = Astro.props as Props;
+
+---
+<Layout {seo}>
+	<section id="page-head" class="seccion-base surface" >
+		<div class="container pt-12">
+				<h1>{titlepage}</h1>
+				<p>{subtitle}</p>
+		</div>
+	</section>
+	<slot/>
+</Layout>
+

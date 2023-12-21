@@ -1,0 +1,79 @@
+---
+import { menus } from "@data/site.json"
+import MainMenu from '@components/theme/MainMenu.astro';
+const aviso = menus.legal[0];
+
+---
+<button id="button-open" class="text-xl">☰</button>
+<section id="nav-mobile" class="contrast relative">    
+    <div class="relative grid text-center z-8 ">
+        <div class="w-20 lg:w-10vw mx-auto "></div>
+        <MainMenu class="menu-mob" />   
+    
+  
+        <a class="block pt-6" href={aviso.link}> {aviso.name} </a>
+    </div>
+    <div class="w-100vw  absolute -z-0 top-90vh ">
+
+    </div>
+</section>
+
+<style>
+ 
+
+/* RIGHT - LEFT  */
+    #nav-mobile {@apply fixed lg:hidden top-0 left-100vw z-10 w-100vw 
+                         h-screen items-center grid overflow-hidden
+                         transition-all transition-duration-400 ;}
+ 
+    #nav-mobile.visible { @apply left-10vw w-90vw  animate-duration-400 z-20 ;}
+    
+    #button-open {@apply grid icc lg:hidden fixed right-0 top-0 z-5 bg-brand-gray h-16
+                         border-top-2 px-2
+                ;}
+/* TOP -> BOTTOM
+    #nav-mobile {@apply fixed lg:hidden w-100vw  bottom-100vh z-10 
+                         h-screen items-center grid overflow-hidden
+                         transition-all transition-duration-400 ;}
+ 
+    #nav-mobile.visible { @apply bottom-0vh left-0vw w-100vw  animate-duration-400 z-20 ;}
+    
+    #button-open {@apply grid icc lg:hidden fixed right-0 top-0 z-5 bg-brand-gray h-16
+                         border-top-2 px-2
+                ;}
+
+
+*/
+ 
+ </style>
+
+
+<script>
+// https://codepen.io/r3khchand/pen/MWbJOwz
+
+const ham = document.querySelector(".ham") as HTMLElement
+const menu = document.querySelector('ul.main-menu') as HTMLElement
+const links = menu.querySelectorAll('li')  
+
+var tl = gsap.timeline({ paused: true });
+
+tl.to(menu, {
+	duration: .5,
+	opacity: 1,
+	height: '100vh', // change this to 100vh for full-height menu
+	ease: 'expo.inOut',
+})
+tl.from(links, {
+	duration: .5,
+	opacity: 0,
+	y: 20,
+	stagger: 0.2,
+	ease: 'expo.inOut',
+}, "-=0.5");
+
+tl.reverse();
+
+ham.addEventListener('click', () => {
+	tl.reversed(!tl.reversed());
+});
+</script>

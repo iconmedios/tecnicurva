@@ -1,0 +1,44 @@
+---
+import "@unocss/reset/normalize.css";
+import StyleBase from "@components/theme/StyleBase.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+import SEO from "@components/SEO.astro";
+import type { Props as SEOProps } from "@components/SEO.astro";
+import ThemeSwicher from "@components/widgets/ThemeSwicher.astro";
+
+import NavMobile from "@components/theme/NavMobile.astro";
+
+export interface Props {
+	seo?: SEOProps;
+}
+
+const { seo } = Astro.props;
+---
+
+<!doctype html >
+<html lang="es" >
+	<head>
+		<SEO {...seo} />
+	</head>
+	<body data-theme="ligth">
+		<Header />
+		<NavMobile />
+		<main>
+			<slot />
+		
+		</main>
+		<Footer />
+		
+
+		<ThemeSwicher />
+
+	
+	
+		<script is:inline src="/assets/js/fslightbox.js"></script>
+		<script src="../app.js"></script>
+
+	</body>
+</html>
+<StyleBase />

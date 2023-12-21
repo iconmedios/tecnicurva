@@ -1,0 +1,19 @@
+---
+import { menus } from "@data/site.json"
+import HeaderLink from './LinkBase.astro';
+const menu = menus.main
+
+
+const { class:menuClass } = Astro.props;
+
+---
+<ul class={menuClass}>
+    {
+        menu.map( ({title, link })=> (
+            
+        <li><HeaderLink href={link}>{title}</HeaderLink></li>
+        
+        ))
+    }
+</ul>
+

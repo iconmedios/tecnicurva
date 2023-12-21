@@ -1,0 +1,117 @@
+<style is:global>
+	html {
+  		scroll-behavior: smooth;
+		font-size:16px;
+	}
+	:root, [data-theme='light']  {
+
+	    --brand:			#E1251B ;
+  	    --secondary:		#FB8900 ;
+		--background-color:	#F8F9FA;
+		--pale-color:		#DEE2E6;
+		--surface-color:	#ADB5BD;  
+		--contrast-color:	#343A40;
+        --text-color: 		theme("colors.zinc.800");
+        --link-color: 		#535353;
+	    --link-active-color:#818181;
+		
+
+	}
+	
+	[data-theme='dark'] {
+
+		--surface-color:	#272727 ;  
+        --background-color: #1a1a1a;
+		--contrast-color:#121416;
+        --text-color: #cac9c9;
+        --link-color: #a8acd4;
+	    --link-active-color: #b3b2ff;
+		--pale-color:#313233;
+
+	}
+
+	[data-theme='salmon'] {
+		--surface-color:	 #EDEDE9;  
+        --background-color:  #FCFCF5; 
+		--contrast-color:	#302017;
+        --text-color:		 #5a4d45;
+        --link-color:		 #6e5241;
+	    --link-active-color: #413731;
+		--contrast-color:	 #d5bdaf;
+		--pale-color:		 #d6ccc2;
+
+	}
+	[data-theme='standout'] {
+		--surface-color:	 #9ad7eb;  
+        --background-color:  #c6eaf7; 
+		--contrast-color:	 #0192c2;
+        --text-color:		 #005d7c;
+        --link-color:		 #007DA5;
+	    --link-active-color: #007DA5;
+		--pale-color:		 #56a9c5;
+
+	}
+
+
+
+
+	body{
+		font-family: 'Maven Pro', sans-serif;
+		font-size: 1em;
+		position: relative;
+		background-color: var(--background-color);
+		color: var(--text-color);
+	
+
+	}
+	a {color:var(--link-color) ;}
+	a.active{ color: var(--link-active-color);}
+	/* COLOR DE CONTRASTE */
+	.contrast, .sticky {
+		color: var(--background-color) !important ;
+		background-color:var(--text-color) !important  ;
+
+	}
+	.contrast a { color:var(--background-color) ;}
+	.contrast a:hover, .contrast a.active{ color:var(--background-color);} 
+	
+	/* COLOR DONDE ALTERNATIVO */
+
+	.surface, .sticky {
+		color: var(--text-color) !important ;
+		background-color:var(--surface-color) !important  ;
+
+	}
+	.sticky  a{
+
+	}
+	.surface a { 
+		color:var(--background-color) 
+		;}
+	.surface a:hover, .surface a.active{ color:var(--background-color);} 
+	
+
+	.pale{
+		background-color:var(--pale-color) !important  ;
+		
+	}
+	
+
+	h1, h2, h3, h4, h5, h6{ @apply leading-1.2em;}
+	  
+	h1{@apply text-8 lg:text-10 ;} 
+	h2{@apply text-7 lg:text-8 ;}
+	h3{@apply text-6 lg:text-6;}
+	h4{@apply text-5 lg:text-5 ;}
+	h5{@apply text-4 lg:text-4.6  ;}
+	h6{@apply text-3.8;}
+
+
+
+
+	
+</style>
+
+
+
+

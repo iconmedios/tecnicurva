@@ -1,0 +1,18 @@
+---
+
+import VideoYTbg from '@components/sections/VideoYTbg.astro';
+
+
+const { idSection } = Astro.props;
+
+---
+<section id={idSection} class="contrast min-h-95vh grid ic relative "> 
+   
+    <div class="container animate-fade-in z-1 ">
+        <div class="pr-5% md:pr-30%">
+            <slot />
+        </div>
+    </div>
+    <!-- <VideoYTbg /> -->
+</section>
+
